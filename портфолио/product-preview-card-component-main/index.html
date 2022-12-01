@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.google.com/specimen/Fraunces' rel='stylesheet'>
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+	
+	body{
+	background: hsl(30, 38%, 92%);
+	display: flex; 
+	flex-direction: column;
+	height: 100vh;
+	margin:0;
+	}
+	
+	.main{
+	flex-grow:1;
+	 display: flex;
+	 justify-content: center;
+     align-items: center;
+	 margin-bottom:10px;
+ 	}
+	.card{
+  display: flex;
+  background-color: #fff;  
+  border-radius: 2rem;
+  overflow: hidden;
+  max-width: 500px;
+  max-height: 850px;
+  
+  }
+	.card-body{
+	padding: 2rem ;
+	}
+	
+	 
+	.btn{
+	display: block;
+width: 100%;
+padding: .7rem ;
+font-size: 1.25rem;
+border-radius: .5rem;
+color: #fff;
+background-color: hsl(158, 36%, 37%);
+border: 1px solid transparent;
+
+	}
+	
+	.content
+	{
+	
+	font-family: Montserrat; 
+color:grey;
+	font-weight: 500;
+	}
+	.articule{
+	font-family: Fraunces; 
+	font-weight: bold;
+	
+	}
+	.praise{
+	font-family: Fraunces; 
+	}
+	.praise>b{
+	font-family: Fraunces; 
+	vertical-align: top;
+	
+	font-size: 20px;
+	color:hsl(158, 36%, 37%);
+	}
+	img{
+    width: 100%;
+	height: 100%;
+	
+}
+.i{width: 14px;
+	height: 14px;
+}
+@media(max-width:375px)
+{
+.card{  
+  flex-direction: column;
+  }
+  }
+  
+	
+  </style>
+</head>
+<body  >
+
+  <main class="main">
+  <div class="card">
+  <div> <img src="images/image-product-desktop.jpg" ></div>
+ <div class="card-body">
+ <p class="content">P E R F U M E</p>
+  <h1 class="articule">Gabrielle Essence Eau De Parfum</h1>
+  <p class="content"> A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+  Perfumer-Creator for the House of CHANEL.</p>
+  <p class="praise"><b>$149.99</b>
+  <s>$169.99</s></p>
+  <button class="btn"> <img class="i" src="images/icon-cart.svg" /> Add to Cart</button>
+  </div>
+  </div>
+  </main> 
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Tanya</a>.
+  </footer>
+
+  
+</body>
+</html>

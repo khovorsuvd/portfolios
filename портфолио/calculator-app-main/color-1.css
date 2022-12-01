@@ -1,0 +1,39 @@
+body{
+	 background: hsl(222, 26%, 31%);
+	 color:white;
+	 
+}
+.frame-monitor {
+     
+      background: hsl(223, 31%, 20%);
+	  }
+	  .frame-key {
+      background: hsl(223, 31%, 20%);}
+	  button {
+     
+      background: hsl(0, 0%, 93%);
+	  border-bottom: 5px solid hsl(35, 11%, 61%);
+	  }
+	  
+	.clean ,.rest{
+background:hsl(190, 58%, 55%);
+	  border-bottom: 5px solid hsl(224, 28%, 35%);
+	  color:white;
+	  }
+	  button:active{
+	  background:hsl(180, 58%, 55%);
+	  border-bottom:5px solid hsl(190, 58%, 55%);
+	  }
+	  .rezult{
+	  background: hsl(6, 63%, 50%);
+	  border-bottom: 5px solid hsl(6, 70%, 34%);
+	  color:white;
+	  }
+	  .custom-radio-btn .checkmark {
+      
+      background: hsl(25, 98%, 40%);
+    }
+	.theme-toggle {
+      
+      background: hsl(223, 31%, 20%);
+    }

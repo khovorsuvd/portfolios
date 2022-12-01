@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>HTML5</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $('.Cell').click(function () {
+        if ($(this).attr('value') == 0) {
+          $(this).attr('value', '1').children(".circle").css("display", "flex");
+
+          $("[value='0']").eq(Math.floor(Math.random() * ($("[value='0']").length))).attr('value', '2').children(".cros").css("display", "flex");
+          if (
+            ($(".Cell").eq(0).attr('value') == 1) && ($(".Cell").eq(1).attr('value') == 1) && ($(".Cell").eq(2).attr('value') == 1) ||
+            ($(".Cell").eq(3).attr('value') == 1) && ($(".Cell").eq(4).attr('value') == 1) && ($(".Cell").eq(5).attr('value') == 1) ||
+            ($(".Cell").eq(6).attr('value') == 1) && ($(".Cell").eq(7).attr('value') == 1) && ($(".Cell").eq(8).attr('value') == 1) ||
+
+            ($(".Cell").eq(0).attr('value') == 1) && ($(".Cell").eq(3).attr('value') == 1) && ($(".Cell").eq(6).attr('value') == 1) ||
+            ($(".Cell").eq(1).attr('value') == 1) && ($(".Cell").eq(4).attr('value') == 1) && ($(".Cell").eq(7).attr('value') == 1) ||
+            ($(".Cell").eq(2).attr('value') == 1) && ($(".Cell").eq(5).attr('value') == 1) && ($(".Cell").eq(8).attr('value') == 1) ||
+
+            ($(".Cell").eq(0).attr('value') == 1) && ($(".Cell").eq(4).attr('value') == 1) && ($(".Cell").eq(8).attr('value') == 1) ||
+            ($(".Cell").eq(2).attr('value') == 1) && ($(".Cell").eq(4).attr('value') == 1) && ($(".Cell").eq(6).attr('value') == 1) 
+          ){
+            alert("выиграл!");
+location.reload();
+}
+
+
+            if (
+            ($(".Cell").eq(0).attr('value') == 2) && ($(".Cell").eq(1).attr('value') == 2) && ($(".Cell").eq(2).attr('value') == 2) ||
+            ($(".Cell").eq(3).attr('value') == 2) && ($(".Cell").eq(4).attr('value') == 2) && ($(".Cell").eq(5).attr('value') == 2) ||
+            ($(".Cell").eq(6).attr('value') == 2) && ($(".Cell").eq(7).attr('value') == 2) && ($(".Cell").eq(8).attr('value') == 2) ||
+
+            ($(".Cell").eq(0).attr('value') == 2) && ($(".Cell").eq(3).attr('value') == 2) && ($(".Cell").eq(6).attr('value') == 2) ||
+            ($(".Cell").eq(1).attr('value') == 2) && ($(".Cell").eq(4).attr('value') == 2) && ($(".Cell").eq(7).attr('value') == 2) ||
+            ($(".Cell").eq(2).attr('value') == 2) && ($(".Cell").eq(5).attr('value') == 2) && ($(".Cell").eq(8).attr('value') == 2) ||
+
+            ($(".Cell").eq(0).attr('value') == 2) && ($(".Cell").eq(4).attr('value') == 2) && ($(".Cell").eq(8).attr('value') == 2) ||
+            ($(".Cell").eq(2).attr('value') == 2) && ($(".Cell").eq(4).attr('value') == 2) && ($(".Cell").eq(6).attr('value') == 2) 
+          )
+          {  alert("восстание машин");
+location.reload();}
+            
+        }
+        else
+          alert("ошибка")
+
+      });
+
+
+
+    });
+
+  </script>
+
+  <style>
+    body {
+      
+
+      display: flex;
+      
+      align-items: center;
+      justify-content: center;
+     
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    
+
+    .Cell {
+      height: 50px;
+      width: 50px;
+      background: white;
+      
+      
+
+    }
+    .Cell:hover .circle{
+      display: flex;
+     
+      
+
+    }
+
+    .table {
+      background: black;
+
+    }
+
+    .circle {
+      display: none;
+      width: 100%;
+      height: 100%;
+      
+
+    }
+
+    .cros {
+      display: none;
+      width: 100%;
+      height: 100%;
+
+    }
+   
+
+  </style>
+</head>
+
+<body>
+
+ 
+    <table class="table">
+      <tbody>
+        <tr>
+          <td class='Cell' value="0">
+            <svg class='circle' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="20" stroke="red" />
+            </svg>
+            <svg class='cros' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="10" y1="10" x2="40" y2="40" stroke="green" />
+              <line x1="40" y1="10" x2="10" y2="40" stroke="green" />
+            </svg>
+          </td>
+          <td class='Cell' value="0"><svg class='circle' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="20" stroke="red" />
+            </svg>
+            <svg class='cros' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="10" y1="10" x2="40" y2="40" stroke="green" />
+              <line x1="40" y1="10" x2="10" y2="40" stroke="green" />
+            </svg>
+          </td>
+          <td class='Cell' value="0"><svg class='circle' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="20" stroke="red" />
+            </svg>
+            <svg class='cros' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="10" y1="10" x2="40" y2="40" stroke="green" />
+              <line x1="40" y1="10" x2="10" y2="40" stroke="green" />
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td class='Cell' value="0">
+            <svg class='circle' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="20" stroke="red" />
+            </svg>
+            <svg class='cros' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="10" y1="10" x2="40" y2="40" stroke="green" />
+              <line x1="40" y1="10" x2="10" y2="40" stroke="green" />
+            </svg>
+          </td>
+          <td class='Cell' value="0">
+            <svg class='circle' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="20" stroke="red" />
+            </svg>
+            <svg class='cros' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="10" y1="10" x2="40" y2="40" stroke="green" />
+              <line x1="40" y1="10" x2="10" y2="40" stroke="green" />
+            </svg>
+          </td>
+          <td class='Cell' value="0">
+            <svg class='circle' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="20" stroke="red" />
+            </svg>
+            <svg class='cros' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="10" y1="10" x2="40" y2="40" stroke="green" />
+              <line x1="40" y1="10" x2="10" y2="40" stroke="green" />
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td class='Cell' value="0">
+            <svg class='circle' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="20" stroke="red" />
+            </svg>
+            <svg class='cros' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="10" y1="10" x2="40" y2="40" stroke="green" />
+              <line x1="40" y1="10" x2="10" y2="40" stroke="green" />
+            </svg>
+          </td>
+          <td class='Cell' value="0">
+            <svg class='circle' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="20" stroke="red" />
+            </svg>
+            <svg class='cros' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="10" y1="10" x2="40" y2="40" stroke="green" />
+              <line x1="40" y1="10" x2="10" y2="40" stroke="green" />
+            </svg>
+          </td>
+          <td class='Cell' value="0">
+            <svg class='circle' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="20" stroke="red" />
+            </svg>
+            <svg class='cros' fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="10" y1="10" x2="40" y2="40" stroke="green" />
+              <line x1="40" y1="10" x2="10" y2="40" stroke="green" />
+            </svg>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  
+  
+</body>
+
+</html>

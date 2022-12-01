@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link href='https://fonts.google.com/specimen/League+Spartan' rel='stylesheet'>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="color-1.css" id="theme" />
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+	 var a;
+	 var operand;
+	 var b;
+	 
+      $("#first").click(function () {
+	 $("#theme").attr("href", "color-1.css");
+});
+       
+      
+      $("#second").click(function () {
+        $("#theme").attr("href", "color-2.css");
+      });
+      $("#third").click(function () {
+	  $("#theme").attr("href", "color-3.css");
+      /*  $("body").append('<link rel="stylesheet" href="color-3.css" type="text/css" />');*/
+      });
+      $(".namber").click(function () {
+        $(".frame-monitor").text(($(".frame-monitor").text() + $(this).text()));
+
+
+      });
+      
+      $(".rest").click(function () {
+        $(".frame-monitor").text(' ');
+      });
+	  $(".clean").click(function () {
+        $(".frame-monitor").text(($(".frame-monitor").text()).slice(0,-1));
+      });
+
+      $(".summ ,.difference, .division, .multiplication").click(function () {
+        a = +($(".frame-monitor").text());
+         operand = ($(this).text());
+        
+        $(".frame-monitor").text('');
+           
+
+      
+ });
+ $(".rezult").click(function () {
+       b =+($(".frame-monitor").text());
+        $(".frame-monitor").text('');
+        
+        var rez;
+        switch(operand){
+          case "+":
+          rez=a+b;
+          break;
+          case"-":
+          rez=a-b;
+          break;
+          case "/":
+          rez=a/b;
+          break;
+          case "x":
+          rez=a*b;
+          break;
+          
+        }
+        
+        $(".frame-monitor").text(rez); 
+		a = undefaind;
+		 operand =undefaind;
+		 b = undefaind;
+        
+
+      });
+	  $(".dot").click(function(){
+	  $(".frame-monitor").text($(".frame-monitor").text()+".");
+	  if(isNaN($(".frame-monitor").text()))
+	  $(".frame-monitor").text("Ошибка");
+	  });
+    });
+
+  </script>
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     
+      font-family: "League Spartan", Arial;
+      font-weight: 700;
+	  
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      position: relative;
+    }
+
+    .wrapper {
+      width: 500px;
+      margin-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .frame-monitor {
+      display: flex;
+     
+      min-height: 70px;
+      border-radius: 10px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      word-wrap: break-word;
+      word-break: break-all;
+      font-size: 32px;
+      justify-content: right;
+
+    }
+
+    .frame-key {
+      
+      min-height: 350px;
+      justify-content: space-between;
+      align-content: space-between;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 10px;
+      padding-top: 13px;
+      padding-bottom: 13px;
+    }
+
+    button {
+      border-radius: 10px;
+      
+      border: 0;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-size: 32px;
+      border-bottom: 5px solid ;
+    }
+
+    .small-button {
+      width: 110px;
+    }
+
+    .big-button {
+      width: 240px;
+    }
+
+
+    .theme-preference {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .theme-preference h5 {
+      margin: 0 2em 0 0;
+    }
+
+    .theme-toggle {
+      border-radius: 20px;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+     
+    }
+
+    .theme-toggle>input {
+      margin: 0.3em;
+    }
+
+    .custom-radio-btn {
+      width: 20px;
+      height: 20px;
+      /* border: 2px solid #fff; */
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .custom-radio-btn .checkmark {
+      width: calc(100% - 6px);
+      height: calc(100% - 6px);
+      border-radius: 50%;
+      display: inline-block;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      
+    }
+
+    .custom-radio-btn input {
+      display: none;
+    }
+
+    .custom-radio-btn input:checked+.checkmark {
+      opacity: 1;
+    }
+
+    .checkmark {
+      cursor: pointer;
+    }
+
+    .theme-toggle::before {
+      content: "1  2  3";
+      position: absolute;
+      bottom: 50px;
+
+    }
+
+	  
+    @media(max-width:375px) {
+      .wrapper {
+        width: 300px;
+      }
+
+      .small-button {
+        width: 67px;
+      }
+
+      .big-button {
+        width: 140px;
+      }
+	  
+    }
+  </style>
+</head>
+
+<body>
+  <header class="wrapper">
+
+
+    <h1>calc</h1>
+    <div class="theme-preference">
+      <h5>THEME</h5>
+      <div class="theme-toggle">
+        <label class="custom-radio-btn">
+          <input id="first" name="toggle-state" type="radio" checked />
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="custom-radio-btn">
+          <input id="second" name="toggle-state" type="radio" />
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="custom-radio-btn">
+          <input id="third" name="toggle-state" type="radio" />
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+
+  </header>
+  <div class=" wrapper frame-monitor "></div>
+  <main class=" wrapper frame-key">
+
+    <button class="small-button namber">7</button>
+    <button class="small-button namber">8</button>
+    <button class="small-button namber">9</button>
+    <button class="small-button clean">DEL</button>
+
+    <button class="small-button namber">4</button>
+    <button class="small-button namber">5</button>
+    <button class="small-button namber">6</button>
+    <button class="small-button summ">+</button>
+
+    <button class="small-button namber">1</button>
+    <button class="small-button namber">2</button>
+    <button class="small-button namber">3</button>
+    <button class="small-button difference">-</button>
+
+    <button class="small-button dot">.</button>
+    <button class="small-button null">0</button>
+    <button class="small-button division">/</button>
+    <button class="small-button multiplication">x</button>
+
+
+    <button class="big-button rest">REST</button>
+    <button class="big-button rezult">=</button>
+
+
+  </main>
+  <footer>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">khovorsuvd</a>.
+  </footer>
+</body>
+
+</html>
